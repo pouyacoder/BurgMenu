@@ -41,7 +41,7 @@ export default {
 }
 
 .hamberger .item button {
-  background-color: rgb(197, 172, 221);
+  background-color: #c67ac9;
   display: flex;
   justify-content: center;
 }

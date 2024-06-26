@@ -21,6 +21,7 @@ export default {
 
 <style>
 .side-menu {
+  padding-left: 3px;
   width: 100%;
   display: flex;
   align-items: center;

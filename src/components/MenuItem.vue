@@ -32,7 +32,6 @@ export default {
 <style>
 .container {
   width: 100%;
-  background-color: aqua;
 }
 
 .container button {
@@ -40,12 +39,19 @@ export default {
   height: 40px;
   font-size: 20px;
   font-weight: bold;
-  background-color: blueviolet;
+  background-color: #ff597b;
+  opacity: 80%;
+  border-radius: 15px;
+  border: 0;
   margin: 2px 0 2px 0;
-  padding: 0 2px;
+  padding: 0 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+
+.container button:hover {
+  background-color: #ff8e9e;
 }
 </style>
