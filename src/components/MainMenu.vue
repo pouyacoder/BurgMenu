@@ -1,21 +1,19 @@
 <script>
-import DropDownMenu from "./DropDownMenu.vue";
+import MenuItem from "./MenuItem.vue";
 
 export default {
   props: ["menuItems"],
   data: function () {
     return {};
   },
-  components: { DropDownMenu },
+  components: { MenuItem },
 };
 </script>
 
 <template>
   <div class="side-menu">
     <div class="item" v-for="item in menuItems">
-      <DropDownMenu
-        v-bind="{ title: item.name, sub: item.children }"
-      ></DropDownMenu>
+      <MenuItem v-bind="{ title: item.name, sub: item.children }"></MenuItem>
     </div>
   </div>
 </template>

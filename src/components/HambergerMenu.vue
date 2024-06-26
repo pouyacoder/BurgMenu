@@ -5,32 +5,32 @@ export default {
 </script>
 
 <template>
-  <div v-if="isActive" id="sub-menu" class="sub-menu .active">
+  <div v-if="isActive" id="hamberger" class="hamberger .active">
     <div class="item" v-for="item in items">
       <button>{{ item.name }}</button>
     </div>
   </div>
-  <div v-else class="sub-menu"></div>
+  <div v-else class="hamberger"></div>
 </template>
 
 <style>
-.sub-menu {
+.hamberger {
   padding: 0 4px;
   height: 100%;
   overflow: hidden;
   /* transition: height 1s ease-in-out; */
 }
 
-.sub-menu .item {
+.hamberger .item {
 }
 
-.sub-menu .item button {
+.hamberger .item button {
   background-color: rgb(197, 172, 221);
   display: flex;
   justify-content: center;
 }
 
-/* .sub-menu .active {
+/* .hamberger .active {
   height: 100%;
 } */
 </style>

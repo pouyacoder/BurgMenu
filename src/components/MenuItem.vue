@@ -1,5 +1,5 @@
 <script>
-import SubMenu from "./SubMenu.vue";
+import HambergerMenu from "./HambergerMenu.vue";
 export default {
   props: ["title", "sub"],
   data: function () {
@@ -13,7 +13,7 @@ export default {
       console.log(this.isActive);
     },
   },
-  components: { SubMenu },
+  components: { HambergerMenu },
 };
 </script>
 
@@ -25,7 +25,7 @@ export default {
       </div>
       <div>></div>
     </button>
-    <SubMenu v-bind="{ items: sub, isActive: isActive }" />
+    <HambergerMenu v-bind="{ items: sub, isActive: isActive }" />
   </div>
 </template>
 

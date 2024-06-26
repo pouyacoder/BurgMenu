@@ -1,9 +1,9 @@
 <script>
-import SideMenu from "./components/SideMenu.vue";
+import MainMenu from "./components/MainMenu.vue";
 import items from "./items";
 export default {
   name: "App",
-  components: { SideMenu },
+  components: { MainMenu },
   data: function () {
     return {
       items: items,
@@ -14,7 +14,7 @@ export default {
 
 <template>
   <div id="app">
-    <div class="side-left"><SideMenu v-bind:menuItems="items" /></div>
+    <div class="side-left"><MainMenu v-bind:menuItems="items" /></div>
     <div class="side-right">Right Menu</div>
   </div>
 </template>
