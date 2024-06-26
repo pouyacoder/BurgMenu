@@ -1,5 +1,12 @@
+<script>
+// defineProps({
+//   msg: {
+//     type: String,
+//     required: true,
+//   },
+// });
+</script>
+
 <template>
-    <div>
-        
-    </div>
+  <div>Side Menu</div>
 </template>

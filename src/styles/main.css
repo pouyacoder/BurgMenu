@@ -9,7 +9,7 @@ body {
   color: white;
 }
 
-#main {
+#app {
   background-color: gray;
   overflow: hidden;
   height: 100vh;

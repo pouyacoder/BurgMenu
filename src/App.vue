@@ -1,8 +1,15 @@
-<script></script>
+<script>
+import SideMenu from "./components/SideMenu.vue";
+</script>
 
 <template>
-  <div id="main">
-    <div class="side-left">Side Left</div>
-    <div class="side-right">Side Right</div>
+  <div id="app">
+    <div class="side-left">
+      <SideMenu />
+    </div>
+    <div class="side-right">
+      right
+      <!-- <SideMenu msg="Hello World"></SideMenu> -->
+    </div>
   </div>
 </template>
