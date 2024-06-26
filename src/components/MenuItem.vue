@@ -1,6 +1,7 @@
 <script>
 import HambergerMenu from "./HambergerMenu.vue";
 export default {
+  name: "MenuItem",
   props: ["title", "sub"],
   data: function () {
     return {
@@ -10,7 +11,6 @@ export default {
   methods: {
     toggleMenu: function () {
       this.isActive = this.isActive ? false : true;
-      console.log(this.isActive);
     },
   },
   components: { HambergerMenu },

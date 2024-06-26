@@ -20,7 +20,15 @@ const items = [
     children: [
       { name: "sub-1", href: "#" },
       { name: "sub-2", href: "#" },
-      { name: "sub-3", href: "#" },
+      {
+        name: "sub-3",
+        href: "#",
+        children: [
+          { name: "sub-3.1", href: "#" },
+          { name: "sub-3.2", href: "#" },
+          { name: "sub-3.3", href: "#" },
+        ],
+      },
     ],
   },
 ];

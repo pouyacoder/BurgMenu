@@ -2,6 +2,7 @@
 import MenuItem from "./MenuItem.vue";
 
 export default {
+  name: "MainMenu",
   props: ["menuItems"],
   data: function () {
     return {};

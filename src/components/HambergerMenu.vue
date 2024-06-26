@@ -1,13 +1,29 @@
 <script>
 export default {
+  name: "HambergerMenu",
   props: ["items", "isActive"],
+  data: function () {
+    return {
+      subActive: false,
+    };
+  },
+  methods: {
+    toggleMenu: function () {
+      this.subActive = this.subActive ? false : true;
+    },
+  },
+  components: {},
 };
 </script>
 
 <template>
   <div v-if="isActive" id="hamberger" class="hamberger .active">
     <div class="item" v-for="item in items">
-      <button>{{ item.name }}</button>
+      <button v-on:click="toggleMenu">{{ item.name }}</button>
+      <HambergerMenu
+        v-if="item.children"
+        v-bind="{ items: item.children, isActive: subActive && isActive }"
+      />
     </div>
   </div>
   <div v-else class="hamberger"></div>
