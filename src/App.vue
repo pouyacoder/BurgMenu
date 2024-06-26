@@ -1,13 +1,12 @@
 <script>
 import SideMenu from "./components/SideMenu.vue";
-import data from "./items";
-const myItems = data.main;
+import items from "./items";
 export default {
   name: "App",
   components: { SideMenu },
   data: function () {
     return {
-      items: myItems,
+      items: items,
     };
   },
 };

@@ -1,11 +1,28 @@
-const items = {
-  main: [
-    { name: "item1", sub: ["sub1", "sub2", "sub3"] },
-    { name: "item2", sub: ["sub1", "sub2", "sub3"] },
-    { name: "item3", sub: ["sub1", "sub2", "sub3"] },
-    { name: "item4", sub: ["sub1", "sub2", "sub3"] },
-    { name: "item5", sub: ["sub1", "sub2", "sub3"] },
-  ],
-};
+const items = [
+  {
+    name: "item-1",
+    children: [
+      { name: "sub-1", href: "#" },
+      { name: "sub-2", href: "#" },
+      { name: "sub-3", href: "#" },
+    ],
+  },
+  {
+    name: "item-2",
+    children: [
+      { name: "sub-1", href: "#" },
+      { name: "sub-2", href: "#" },
+      { name: "sub-3", href: "#" },
+    ],
+  },
+  {
+    name: "item-3",
+    children: [
+      { name: "sub-1", href: "#" },
+      { name: "sub-2", href: "#" },
+      { name: "sub-3", href: "#" },
+    ],
+  },
+];
 
 export default items;

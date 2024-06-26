@@ -13,7 +13,9 @@ export default {
 <template>
   <div class="side-menu">
     <div class="item" v-for="item in menuItems">
-      <DropDownMenu v-bind="{ title: item.name, sub: item.sub }"></DropDownMenu>
+      <DropDownMenu
+        v-bind="{ title: item.name, sub: item.children }"
+      ></DropDownMenu>
     </div>
   </div>
 </template>

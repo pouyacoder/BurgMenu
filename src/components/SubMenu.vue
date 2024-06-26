@@ -7,7 +7,7 @@ export default {
 <template>
   <div v-if="isActive" id="sub-menu" class="sub-menu .active">
     <div class="item" v-for="item in items">
-      <button>{{ item }}</button>
+      <button>{{ item.name }}</button>
     </div>
   </div>
   <div v-else class="sub-menu"></div>
@@ -26,6 +26,8 @@ export default {
 
 .sub-menu .item button {
   background-color: rgb(197, 172, 221);
+  display: flex;
+  justify-content: center;
 }
 
 /* .sub-menu .active {
