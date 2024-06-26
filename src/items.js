@@ -4,6 +4,7 @@ const items = {
     { name: "item2", sub: ["sub1", "sub2", "sub3"] },
     { name: "item3", sub: ["sub1", "sub2", "sub3"] },
     { name: "item4", sub: ["sub1", "sub2", "sub3"] },
+    { name: "item5", sub: ["sub1", "sub2", "sub3"] },
   ],
 };
 
