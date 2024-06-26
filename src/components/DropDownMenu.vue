@@ -3,7 +3,15 @@ import SubMenu from "./SubMenu.vue";
 export default {
   props: ["title", "sub"],
   data: function () {
-    return {};
+    return {
+      isActive: false,
+    };
+  },
+  methods: {
+    toggleMenu: function () {
+      this.isActive = this.isActive ? false : true;
+      console.log(this.isActive);
+    },
   },
   components: { SubMenu },
 };
@@ -11,8 +19,13 @@ export default {
 
 <template>
   <div class="container">
-    <button>{{ title }}</button>
-    <SubMenu v-bind:items="sub" />
+    <button v-on:click="toggleMenu">
+      <div>
+        {{ title }}
+      </div>
+      <div>></div>
+    </button>
+    <SubMenu v-bind="{ items: sub, isActive: isActive }" />
   </div>
 </template>
 
@@ -29,5 +42,10 @@ export default {
   font-weight: bold;
   background-color: blueviolet;
   margin: 2px 0 2px 0;
+  padding: 0 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 </style>
