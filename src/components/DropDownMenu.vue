@@ -1,15 +1,18 @@
 <script>
+import SubMenu from "./SubMenu.vue";
 export default {
   props: ["title", "sub"],
   data: function () {
     return {};
   },
+  components: { SubMenu },
 };
 </script>
 
 <template>
   <div class="container">
     <button>{{ title }}</button>
+    <SubMenu v-bind:items="sub" />
   </div>
 </template>
 

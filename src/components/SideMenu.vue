@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="side-menu">
     <div class="item" v-for="item in menuItems">
-      <DropDownMenu v-bind:title="item.name"></DropDownMenu>
+      <DropDownMenu v-bind="{ title: item.name, sub: item.sub }"></DropDownMenu>
     </div>
   </div>
 </template>
