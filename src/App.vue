@@ -23,8 +23,13 @@ export default {
   <div id="app">
     <div>
       <div class="left">
-        <div v-if="showSideMenu" class="side-left">
-          <SideMenu v-bind:menuItems="items" v-bind:isActive="showSideMenu" />
+        <div>
+          <div v-if="showSideMenu" class="side-left open-menu">
+            <SideMenu v-bind:menuItems="items" v-bind:isActive="true" />
+          </div>
+          <div v-else class="side-left close-menu">
+            <SideMenu v-bind:menuItems="items" v-bind:isActive="true" />
+          </div>
         </div>
         <div class="burger-btn">
           <HamButton v-bind:toggle="toggleSideMenu" />
