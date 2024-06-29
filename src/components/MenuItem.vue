@@ -1,5 +1,4 @@
 <script>
-import MainMenu from "./MainMenu.vue";
 export default {
   name: "MenuItem",
   props: ["title", "sub"],
@@ -13,7 +12,7 @@ export default {
       this.isActive = this.isActive ? false : true;
     },
   },
-  components: { MainMenu: () => import("./MainMenu.vue") },
+  components: { SideMenu: () => import("./SideMenu.vue") },
 };
 </script>
 
@@ -28,10 +27,7 @@ export default {
         <div v-else-if="!isActive && sub" class="off">></div>
       </div>
     </button>
-    <MainMenu
-      v-if="sub"
-      v-bind="{ menuItems: sub, isActive: isActive }"
-    />
+    <SideMenu v-if="sub" v-bind="{ menuItems: sub, isActive: isActive }" />
   </div>
 </template>
 

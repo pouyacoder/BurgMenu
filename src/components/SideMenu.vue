@@ -1,25 +1,25 @@
 <script>
 import MenuItem from "./MenuItem.vue";
 export default {
-  name: "MainMenu",
+  name: "SideMenu",
   props: ["menuItems", "isActive"],
   data: function () {
     return {};
   },
   methods: {
-    menuStyle: function (active) {
-      console.log(active);
-      if (active) {
-        return {
-          height: "100%",
-          display: "flex",
-        };
-      }
-      return {
-        height: "0px",
-        display: "none",
-      };
-    },
+    // menuStyle: function (active) {
+    //   console.log(active);
+    //   if (active) {
+    //     return {
+    //       height: "100%",
+    //       display: "flex",
+    //     };
+    //   }
+    //   return {
+    //     height: "0px",
+    //     display: "none",
+    //   };
+    // },
   },
   components: { MenuItem },
 };
@@ -42,7 +42,7 @@ export default {
   align-items: center;
   justify-content: center top;
   flex-direction: column;
-  transition: height 2s ease-in-out;
+  transition: height 0.2s ease-in-out;
 }
 
 .side-menu .item {
