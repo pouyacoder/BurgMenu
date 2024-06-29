@@ -7,6 +7,7 @@ export default {
   data: function () {
     return {
       items: items,
+      isActive: true,
     };
   },
 };
@@ -14,7 +15,14 @@ export default {
 
 <template>
   <div id="app">
-    <div class="side-left"><MainMenu v-bind:menuItems="items" /></div>
+    <div class="side-left">
+      <div class="burger-btn">
+        <button>Btn</button>
+      </div>
+      <MainMenu v-bind:menuItems="items" v-bind:isActive="isActive" />
+    </div>
     <div class="side-right">Right Menu</div>
   </div>
 </template>
+
+<style></style>

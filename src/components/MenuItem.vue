@@ -28,14 +28,17 @@ export default {
         <div v-else-if="!isActive && sub" class="off">></div>
       </div>
     </button>
-    <MainMenu v-if="sub && isActive" v-bind="{ menuItems: sub }" />
+    <MainMenu
+      v-if="sub"
+      v-bind="{ menuItems: sub, isActive: isActive }"
+    />
   </div>
 </template>
 
 <style>
 .container {
   width: 100%;
-  padding: 0 0 0 7px;
+  /* padding: 0 0 0 7px; */
   overflow: hidden;
 }
 
@@ -45,23 +48,26 @@ export default {
   font-size: 20px;
   font-weight: bold;
   background-color: white;
+  color: rgb(28, 30, 33);
   opacity: 80%;
-  border-radius: 15px;
+  border-radius: 12px;
   border: 0;
   margin: 2px 0px 2px 0;
-  padding: 0 5px;
+  padding: 0 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .container button:hover {
-  background-color: rgba(202, 202, 202, 0.692);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .dropdown-icon {
-  font-size: 25px;
+  font-size: 30px !important;
   font-weight: bold;
 }
 
