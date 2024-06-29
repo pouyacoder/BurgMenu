@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: #eeeeee;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #app {
-  background-color: #eeeeee;
+  background-color: white;
   overflow: hidden;
   height: 100vh;
   display: flex;
@@ -20,7 +20,9 @@ body {
 }
 
 .side-left {
-  background-image: linear-gradient(to right, #f9b5d0, #eeeeee);
+  border: 1px solid;
+  padding: 3px;
+  border-color: #c0bfbf7e;
   color: black;
   width: 10%;
   display: flex;
@@ -29,6 +31,7 @@ body {
   flex-direction: column;
   height: 100%;
   transition: width 300ms ease-in-out;
+  z-index: 100;
 }
 
 .side-left:hover {
@@ -36,11 +39,13 @@ body {
 }
 
 .side-right {
-  background-image: linear-gradient(to right, #eeeeee, #f9b5d0);
+  position: fixed;
+  color: black;
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: center top;
   flex-direction: column;
   height: 100%;
+  z-index: 0;
 }
