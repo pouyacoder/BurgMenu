@@ -16,7 +16,7 @@ export default {
 <style>
 .close-bar {
   height: 50px;
-  background-color: rgba(82, 82, 82, 0.726);
+  background-color: #242526;
   display: flex;
   flex-direction: row;
   justify-content: end;

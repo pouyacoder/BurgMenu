@@ -21,7 +21,7 @@ export default {
 <style>
 .nav-bar {
   position: absolute;
-  background-color: rgb(66, 66, 66);
+  background-color: #242526;
   width: 100%;
   height: 60px;
   display: flex;

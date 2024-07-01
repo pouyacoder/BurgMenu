@@ -15,6 +15,18 @@ export default {
       this.isOpen = this.isOpen ? false : true;
     },
   },
+  computed: {
+    dropDownIconAngle: function () {
+      if (this.isOpen) {
+        return {
+          rotate: "90deg",
+        };
+      }
+      return {
+        rotate: "0deg",
+      };
+    },
+  },
   components: {
     Menu: () => import("./Menu.vue"),
   },
@@ -23,7 +35,16 @@ export default {
 
 <template>
   <div class="item">
-    <button v-on:click="toggleChildMenu">{{ title }}</button>
+    <button v-on:click="toggleChildMenu">
+      {{ title }}
+      <div
+        v-if="children"
+        class="drop-down-icon"
+        v-bind:style="dropDownIconAngle"
+      >
+        >
+      </div>
+    </button>
     <Menu v-if="children" v-bind:items="children" v-bind:isOpen="isOpen"></Menu>
   </div>
 </template>
@@ -35,18 +56,29 @@ export default {
 .item button {
   width: 100%;
   border: 0;
-  border-radius: 10px;
-  height: 25px;
-  background-color: #e0e0e0;
-  color: #000;
-  font-weight: 600;
+  border-radius: 5px;
+  height: 30px;
+  background-color: #242526;
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding-left: 10px;
+  padding-right: 5px;
 }
 
 .item button:hover {
-  background-color: #b3b0b0;
+  background-color: #2f3031;
+}
+
+.drop-down-icon {
+  color: #969797;
+  font-size: 30px;
+  font-weight: normal;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition: rotate 200ms ease-in-out;
 }
 </style>

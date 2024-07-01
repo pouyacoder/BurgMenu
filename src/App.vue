@@ -39,6 +39,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(36, 36, 36);
+  background: #1b1b1d;
 }
 </style>
