@@ -1,43 +1,36 @@
 <script>
-import HamButton from "./components/HamButton.vue";
-import SideMenu from "./components/SideMenu.vue";
-import items from "./items";
+import LeftPanel from "./components/LeftPanel.vue";
 export default {
   name: "App",
   data: function () {
     return {
-      items: items,
-      showSideMenu: false,
+      showLeftPanel: true,
     };
   },
   methods: {
-    toggleSideMenu: function () {
-      this.showSideMenu = this.showSideMenu ? false : true;
+    closeLeftPanel: function () {
+      this.showLeftPanel = false;
     },
   },
-  components: { SideMenu, HamButton },
+  components: { LeftPanel },
 };
 </script>
 
 <template>
-  <div id="app">
-    <div>
-      <div class="left">
-        <div>
-          <div v-if="showSideMenu" class="side-left open-menu">
-            <SideMenu v-bind:menuItems="items" v-bind:isActive="true" />
-          </div>
-          <div v-else class="side-left close-menu">
-            <SideMenu v-bind:menuItems="items" v-bind:isActive="true" />
-          </div>
-        </div>
-        <div class="burger-btn">
-          <HamButton v-bind:toggle="toggleSideMenu" />
-        </div>
-      </div>
-    </div>
-    <div class="side-right">Right Menu</div>
+  <div class="app">
+    <LeftPanel
+      v-bind:isActive="showLeftPanel"
+      v-bind:closeBtnCallback="closeLeftPanel"
+    ></LeftPanel>
   </div>
 </template>
 
-<style></style>
+<style>
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgb(36, 36, 36);
+}
+</style>
