@@ -9,15 +9,11 @@ export default {
     coverStyle: function (active) {
       if (active)
         return {
-          display: "block",
           animation: "fadeIn 0.5s forwards",
         };
-      else {
-        return {
-          // animation: "fadeOut 0.5s forwards",
-          display: "none",
-        };
-      }
+      return {
+        animation: "fadeOut 0.5s forwards",
+      };
     },
   },
 };
@@ -34,6 +30,7 @@ export default {
 <style>
 @keyframes fadeIn {
   0% {
+    display: block;
     opacity: 0;
   }
   100% {
@@ -43,10 +40,12 @@ export default {
 
 @keyframes fadeOut {
   0% {
+    display: block;
     opacity: 0.7;
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
 
