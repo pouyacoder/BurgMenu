@@ -37,13 +37,13 @@ export default {
   <div class="item">
     <button v-on:click="toggleChildMenu">
       {{ title }}
-      <div
+      <span
         v-if="children"
-        class="drop-down-icon"
+        class="material-symbols-outlined drop-down-icon"
         v-bind:style="dropDownIconAngle"
       >
-        >
-      </div>
+        chevron_right
+      </span>
     </button>
     <Menu v-if="children" v-bind:items="children" v-bind:isOpen="isOpen"></Menu>
   </div>
@@ -76,9 +76,6 @@ export default {
 
 .drop-down-icon {
   color: #969797;
-  font-size: 30px;
-  font-weight: normal;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transition: rotate 200ms ease-in-out;
 }
 </style>
