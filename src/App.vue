@@ -27,7 +27,7 @@ export default {
       v-bind:closeBtnCallback="setShowLeftPanel"
     ></LeftPanel>
     <CoverPanel
-      v-if="showLeftPanel"
+      v-bind:show-cover-panel="showLeftPanel"
       v-bind:closeLeftPanelCallback="setShowLeftPanel"
     ></CoverPanel>
   </div>
