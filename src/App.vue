@@ -1,4 +1,5 @@
 <script>
+import CoverPanel from "./components/CoverPanel.vue";
 import LeftPanel from "./components/LeftPanel.vue";
 import OpenLeftPanel from "./components/OpenLeftPanel.vue";
 export default {
@@ -13,7 +14,7 @@ export default {
       this.showLeftPanel = active;
     },
   },
-  components: { LeftPanel, OpenLeftPanel },
+  components: { LeftPanel, OpenLeftPanel, CoverPanel },
 };
 </script>
 
@@ -24,6 +25,10 @@ export default {
       v-bind:isActive="showLeftPanel"
       v-bind:closeBtnCallback="setShowLeftPanel"
     ></LeftPanel>
+    <CoverPanel
+      v-if="showLeftPanel"
+      v-bind:closeLeftPanelCallback="setShowLeftPanel"
+    ></CoverPanel>
   </div>
 </template>
 

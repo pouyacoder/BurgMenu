@@ -45,7 +45,7 @@ export default {
   background-color: gray;
   position: relative;
   transition: left 500ms ease-in-out;
-  z-index: 1;
+  z-index: 100;
 }
 
 .left-pane-menu-container {
