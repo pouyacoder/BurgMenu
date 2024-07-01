@@ -26,17 +26,26 @@ export default {
 }
 
 .close-bar .close-btn {
-  --s: 30px; /* size */
-  width: var(--s);
-  aspect-ratio: 1;
-  padding: calc(var(--s) * 0.1);
-  --_g: radial-gradient(farthest-side, #000 96%, #0000);
-  background: radial-gradient(closest-side at 50% 12.5%, #ffffff 96%, #0000) top /
-      20% 80% repeat-y,
-    radial-gradient(closest-side at 12.5% 50%, #ffffff 96%, #0000) left/80% 20%
-      repeat-x,
-    conic-gradient(from 90deg at 33% 33%, #0000 90deg, #ffffff 0) 100% 100%/60%
-      60% padding-box content-box;
-  transform: translateZ(0) rotate(45deg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 43%,
+      #fff 45%,
+      #fff 55%,
+      rgba(0, 0, 0, 0) 57%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      135deg,
+      #242526 0%,
+      #242526 43%,
+      #fff 45%,
+      #fff 55%,
+      #242526 57%,
+      #242526 100%
+    );
 }
 </style>
