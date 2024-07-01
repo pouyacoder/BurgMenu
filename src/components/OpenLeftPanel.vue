@@ -18,10 +18,6 @@ export default {
 
 <style>
 .open-left-panel {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 0;
 }
 
 .open-left-panel .open-panel-btn {

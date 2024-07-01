@@ -19,7 +19,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(240, 248, 255, 0.082);
+  background-color: rgba(0, 0, 0, 0.315);
   z-index: 5;
 }
 </style>
