@@ -1,26 +1,28 @@
 <script>
 import LeftPanel from "./components/LeftPanel.vue";
+import OpenLeftPanel from "./components/OpenLeftPanel.vue";
 export default {
   name: "App",
   data: function () {
     return {
-      showLeftPanel: true,
+      showLeftPanel: false,
     };
   },
   methods: {
-    closeLeftPanel: function () {
-      this.showLeftPanel = false;
+    setShowLeftPanel: function (active) {
+      this.showLeftPanel = active;
     },
   },
-  components: { LeftPanel },
+  components: { LeftPanel, OpenLeftPanel },
 };
 </script>
 
 <template>
   <div class="app">
+    <OpenLeftPanel v-bind:openPanelCallback="setShowLeftPanel"></OpenLeftPanel>
     <LeftPanel
       v-bind:isActive="showLeftPanel"
-      v-bind:closeBtnCallback="closeLeftPanel"
+      v-bind:closeBtnCallback="setShowLeftPanel"
     ></LeftPanel>
   </div>
 </template>
