@@ -3,6 +3,7 @@ export default {
   name: "CloseBar",
   props: {
     closeBtnCallback: Function,
+    darkMode: Boolean,
   },
   methods: {
     getColorMode: function (darkMode) {
@@ -25,7 +26,7 @@ export default {
   <div class="close-bar">
     <div
       class="close-btn"
-      v-bind:style="getColorMode(true)"
+      v-bind:style="getColorMode(darkMode)"
       v-on:click="() => closeBtnCallback(false)"
     ></div>
   </div>

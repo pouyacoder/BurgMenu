@@ -12,6 +12,7 @@ export default {
   props: {
     isActive: Boolean,
     closeBtnCallback: Function,
+    darkMode: Boolean,
   },
   methods: {
     setLeftPosition: function (active) {
@@ -31,7 +32,10 @@ export default {
 
 <template>
   <div class="left-panel" v-bind:style="setLeftPosition(isActive)">
-    <CloseBar v-bind:closeBtnCallback="closeBtnCallback"></CloseBar>
+    <CloseBar
+      v-bind:closeBtnCallback="closeBtnCallback"
+      v-bind:dark-mode="darkMode"
+    ></CloseBar>
     <div class="left-pane-menu-container">
       <Menu v-bind:items="items" v-bind:isOpen="true"></Menu>
     </div>

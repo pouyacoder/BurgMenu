@@ -46,6 +46,7 @@ export default {
     <LeftPanel
       v-bind:isActive="showLeftPanel"
       v-bind:closeBtnCallback="setShowLeftPanel"
+      v-bind:dark-mode="isDarkMode"
     ></LeftPanel>
     <CoverPanel
       v-bind:show-cover-panel="showLeftPanel"
