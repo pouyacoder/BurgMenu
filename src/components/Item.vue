@@ -52,8 +52,8 @@ export default {
   border: 0;
   border-radius: 5px;
   height: 30px;
-  background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
-  color: light-dark(var(--text-color-light), var(--text-color-dark));
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-size: 17px;
   font-weight: 400;
   display: flex;
@@ -65,7 +65,7 @@ export default {
 }
 
 .item button:hover {
-  background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+  background-color: var(--bg-color);
 }
 
 .icon {

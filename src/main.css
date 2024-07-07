@@ -2,20 +2,16 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"); */
 
 :root {
-  /* Light Plate */
-  --bg-color-light: #ffffff;
-  --nav-bg-color-light: #ffffff;
-  --text-color-light: #1c1e21;
-  --hover-bg-color-light: #f2f2f2;
-
-  /* Dark Plate */
-  --bg-color-dark: #242427;
-  --nav-bg-color-dark: #202022;
-  --text-color-dark: #e3e3e3;
-  --hover-bg-color-dark: #272729;
-
-  /* Define color scheme */
-  color-scheme: light dark;
+  --bg-color: #ffffff;
+  --nav-bg-color: #ffffff;
+  --text-color: #1c1e21;
+  --hover-bg-color: #f2f2f2;
+}
+[data-theme="dark"] {
+  --bg-color: #242427;
+  --nav-bg-color: #202022;
+  --text-color: #e3e3e3;
+  --hover-bg-color: #272729;
 }
 
 * {
@@ -23,7 +19,7 @@
   padding: 0;
   margin: 0;
   /* TODO: use color scheme */
-  color: light-dark(var(--text-color-light), var(--text-color-dark));
+  color: var(--text-color);
   /* color: #E3E3E3; */
   font-family: "Roboto", sans-serif;
   font-weight: 400;

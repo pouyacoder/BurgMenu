@@ -6,6 +6,7 @@ export default {
   props: {
     openPanelCallback: Function,
     toggleColorMode: Function,
+    currentColorMode: Boolean,
   },
   components: { OpenLeftPanel },
 };
@@ -15,6 +16,7 @@ export default {
   <div class="nav-bar">
     <OpenLeftPanel
       v-bind:open-panel-callback="openPanelCallback"
+      v-bind:color-mode="currentColorMode"
     ></OpenLeftPanel>
     <button v-on:click="toggleColorMode">Change Color Mode</button>
   </div>
@@ -23,10 +25,7 @@ export default {
 <style>
 .nav-bar {
   position: absolute;
-  background-color: light-dark(
-    var(--nav-bg-color-light),
-    var(--nav-bg-color-dark)
-  );
+  background-color: var(--nav-bg);
   width: 100%;
   height: 60px;
   display: flex;

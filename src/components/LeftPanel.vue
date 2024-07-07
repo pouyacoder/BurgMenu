@@ -42,7 +42,7 @@ export default {
 .left-panel {
   height: 100%;
   width: 300px;
-  background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
+  background-color: var(--bg-color);
   position: relative;
   transition: left 500ms ease-in-out;
   z-index: 100;
