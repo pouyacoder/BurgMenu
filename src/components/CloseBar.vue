@@ -16,7 +16,7 @@ export default {
 <style>
 .close-bar {
   height: 50px;
-  background-color: #242526;
+  background-color: light-dark(var(--bg-color-light), var(--bg-color-dark));
   display: flex;
   flex-direction: row;
   justify-content: end;

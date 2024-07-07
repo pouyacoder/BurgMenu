@@ -53,7 +53,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.315);
+  background-color: rgba(0, 0, 0, 0.274);
   z-index: 5;
   transition: all 500ms ease-in-out;
 }

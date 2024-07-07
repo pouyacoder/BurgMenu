@@ -8,11 +8,27 @@ export default {
   data: function () {
     return {
       showLeftPanel: false,
+      isDarkMode: true,
     };
+  },
+  computed: {
+    getColorMode: function () {
+      if (this.isDarkMode) {
+        return {
+          "color-scheme": "dark",
+        };
+      }
+      return {
+        "color-scheme": "light",
+      };
+    },
   },
   methods: {
     setShowLeftPanel: function (active) {
       this.showLeftPanel = active;
+    },
+    toggleColorMode: function () {
+      this.isDarkMode = this.isDarkMode ? false : true;
     },
   },
   components: { LeftPanel, OpenLeftPanel, CoverPanel, NavBar },
@@ -20,8 +36,12 @@ export default {
 </script>
 
 <template>
-  <div class="app">
-    <NavBar v-bind:open-panel-callback="setShowLeftPanel"> </NavBar>
+  <div class="app" v-bind:style="getColorMode">
+    <NavBar
+      v-bind:open-panel-callback="setShowLeftPanel"
+      v-bind:toggle-color-mode="toggleColorMode"
+    >
+    </NavBar>
     <LeftPanel
       v-bind:isActive="showLeftPanel"
       v-bind:closeBtnCallback="setShowLeftPanel"
@@ -39,6 +59,14 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #1b1b1d;
+  background: light-dark(var(--bg-color-light), var(--bg-color-dark));
+}
+
+.dark-mode {
+  color-scheme: dark;
+}
+
+.light-mode {
+  color-scheme: light;
 }
 </style>
