@@ -8,6 +8,12 @@ export default {
     toggleColorMode: Function,
     currentColorMode: Boolean,
   },
+  methods: {
+    getToggleBtnText: function (darkMode) {
+      let text = darkMode ? "Light" : "Dark";
+      return text;
+    },
+  },
   components: { OpenLeftPanel },
 };
 </script>
@@ -18,14 +24,16 @@ export default {
       v-bind:open-panel-callback="openPanelCallback"
       v-bind:color-mode="currentColorMode"
     ></OpenLeftPanel>
-    <button v-on:click="toggleColorMode">Change Color Mode</button>
+    <button v-on:click="toggleColorMode">
+      {{ getToggleBtnText(currentColorMode) }}
+    </button>
   </div>
 </template>
 
 <style>
 .nav-bar {
   position: absolute;
-  background-color: var(--nav-bg);
+  background-color: var(--nav-bg-color);
   width: 100%;
   height: 60px;
   display: flex;
@@ -33,5 +41,16 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding-left: 25px;
+}
+
+.nav-bar button {
+  margin-right: 30px;
+  width: 60px;
+  height: 30px;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 10px;
+  background-color: var(--bg-color-mode-btn);
+  color: var(--text-color-mode-btn);
 }
 </style>

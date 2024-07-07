@@ -3,15 +3,19 @@
 
 :root {
   --bg-color: #ffffff;
-  --nav-bg-color: #ffffff;
+  --nav-bg-color: #f8f8f8;
   --text-color: #1c1e21;
   --hover-bg-color: #f2f2f2;
+  --bg-color-mode-btn: rgb(43, 42, 42);
+  --text-color-mode-btn: rgb(231, 230, 230);
 }
 [data-theme="dark"] {
   --bg-color: #242427;
   --nav-bg-color: #202022;
   --text-color: #e3e3e3;
   --hover-bg-color: #272729;
+  --bg-color-mode-btn: rgb(218, 218, 218);
+  --text-color-mode-btn: rgb(59, 59, 59);
 }
 
 * {
