@@ -1,35 +1,35 @@
 const children = [
   {
     id: 1,
-    name: "item-1",
+    name: "Animals",
     children: [
-      { id: 4, name: "sub-1", href: "#" },
-      { id: 5, name: "sub-2", href: "#" },
-      { id: 6, name: "sub-3", href: "#" },
+      { id: 4, name: "Dog", href: "#" },
+      { id: 5, name: "Cat", href: "#" },
+      { id: 6, name: "Bird", href: "#" },
     ],
   },
   {
     id: 2,
-    name: "item-2",
+    name: "Cars",
     children: [
-      { id: 7, name: "sub-1", href: "#" },
-      { id: 8, name: "sub-2", href: "#" },
-      { id: 9, name: "sub-3", href: "#" },
+      { id: 7, name: "Porsche", href: "#" },
+      { id: 8, name: "Benz", href: "#" },
+      { id: 9, name: "BMW", href: "#" },
     ],
   },
   {
     id: 3,
-    name: "item-3",
+    name: "Country",
     children: [
-      { id: 10, name: "sub-1", href: "#" },
-      { id: 11, name: "sub-2", href: "#" },
+      { id: 10, name: "France", href: "#" },
+      { id: 11, name: "Germany", href: "#" },
       {
-        name: "sub-3",
+        name: "USA",
         href: "#",
         children: [
-          { id: 12, name: "sub-3.1", href: "#" },
-          { id: 13, name: "sub-3.2", href: "#" },
-          { id: 14, name: "sub-3.3", href: "#" },
+          { id: 12, name: "California", href: "#" },
+          { id: 13, name: "Washington", href: "#" },
+          { id: 14, name: "Texas", href: "#" },
         ],
       },
     ],
