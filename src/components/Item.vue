@@ -17,7 +17,6 @@ export default {
   methods: {
     onItemBtnClick: function () {
       this.isOpen = this.isOpen ? false : true;
-      console.log(this.selectedId);
       this.changeSelectedId(this.children, this.id);
     },
     getSelectedItemStyle: function () {
