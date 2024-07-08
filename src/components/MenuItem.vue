@@ -6,7 +6,6 @@ export default {
     title: String,
     children: Array,
     selectedId: Number,
-    selectedId: Number,
     changeSelectedId: Function,
     parentAddress: String,
   },
@@ -23,6 +22,10 @@ export default {
         this.$router.replace(this.parentAddress + this.title).catch(() => {});
     },
     getSelectedItemStyle: function () {
+      if (this.children && this.isOpen)
+        return {
+          "background-color": "var(--hover-bg-color)",
+        };
       return {
         color:
           !this.children && this.id == this.selectedId
