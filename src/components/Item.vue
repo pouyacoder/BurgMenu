@@ -2,8 +2,12 @@
 export default {
   name: "Item",
   props: {
+    id: Number,
     title: String,
     children: Array,
+    selectedId: Number,
+    selectedId: Number,
+    changeSelectedId: Function,
   },
   data() {
     return {
@@ -11,8 +15,22 @@ export default {
     };
   },
   methods: {
-    toggleChildMenu: function () {
+    onItemBtnClick: function () {
       this.isOpen = this.isOpen ? false : true;
+      console.log(this.selectedId);
+      this.changeSelectedId(this.children, this.id);
+    },
+    getSelectedItemStyle: function () {
+      if (!this.children && this.id == this.selectedId) {
+        return {
+          color: "#764ABC",
+          "text-decoration": "underline",
+        };
+      }
+      return {
+        color: "var(--text-color)",
+        "text-decoration": "none",
+      };
     },
   },
   computed: {
@@ -35,11 +53,17 @@ export default {
 
 <template>
   <div class="item">
-    <button v-on:click="toggleChildMenu">
+    <button v-on:click="onItemBtnClick" v-bind:style="getSelectedItemStyle()">
       {{ title }}
       <div v-if="children" v-bind:style="dropDownIconAngle" class="icon"></div>
     </button>
-    <Menu v-if="children" v-bind:items="children" v-bind:isOpen="isOpen"></Menu>
+    <Menu
+      v-if="children"
+      v-bind:items="children"
+      v-bind:isOpen="isOpen"
+      v-bind:selectedId="selectedId"
+      v-bind:changeSelectedId="changeSelectedId"
+    ></Menu>
   </div>
 </template>
 
@@ -65,7 +89,7 @@ export default {
 }
 
 .item button:hover {
-  background-color: var(--bg-color);
+  background-color: var(--hover-bg-color);
 }
 
 .icon {

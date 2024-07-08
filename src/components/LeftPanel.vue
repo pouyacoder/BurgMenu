@@ -13,6 +13,8 @@ export default {
     isActive: Boolean,
     closeBtnCallback: Function,
     darkMode: Boolean,
+    selectedId: Number,
+    changeSelectedId: Function,
   },
   methods: {
     setLeftPosition: function (active) {
@@ -37,7 +39,12 @@ export default {
       v-bind:dark-mode="darkMode"
     ></CloseBar>
     <div class="left-pane-menu-container">
-      <Menu v-bind:items="items" v-bind:isOpen="true"></Menu>
+      <Menu
+        v-bind:items="items"
+        v-bind:isOpen="true"
+        v-bind:selectedId="selectedId"
+        v-bind:changeSelectedId="changeSelectedId"
+      ></Menu>
     </div>
   </div>
 </template>

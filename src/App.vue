@@ -10,6 +10,7 @@ export default {
     return {
       showLeftPanel: false,
       isDarkMode: false,
+      selectedIdLeftPanel: -1,
     };
   },
   computed: {
@@ -31,6 +32,11 @@ export default {
         document.documentElement.setAttribute("data-theme", "light");
       }
     },
+    setSelectedIdLeftPanel: function (hasSub, newId) {
+      if (!hasSub) {
+        this.selectedIdLeftPanel = newId;
+      }
+    },
   },
   components: { LeftPanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },
 };
@@ -48,6 +54,8 @@ export default {
       v-bind:isActive="showLeftPanel"
       v-bind:closeBtnCallback="setShowLeftPanel"
       v-bind:dark-mode="isDarkMode"
+      v-bind:selectedId="selectedIdLeftPanel"
+      v-bind:changeSelectedId="setSelectedIdLeftPanel"
     ></LeftPanel>
     <MainPanel></MainPanel>
     <CoverPanel

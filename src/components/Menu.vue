@@ -5,6 +5,8 @@ export default {
   props: {
     items: Array,
     isOpen: Boolean,
+    selectedId: Number,
+    changeSelectedId: Function,
   },
   methods: {
     openMenu: function (open) {
@@ -29,8 +31,11 @@ export default {
     <Item
       v-for="item in items"
       v-bind:key="item.id"
+      v-bind:id="item.id"
       v-bind:title="item.name"
       v-bind:children="item.children"
+      v-bind:selectedId="selectedId"
+      v-bind:changeSelectedId="changeSelectedId"
     ></Item>
   </div>
 </template>
