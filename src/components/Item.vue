@@ -20,7 +20,7 @@ export default {
       this.isOpen = this.isOpen ? false : true;
       this.changeSelectedId(this.children, this.id);
       if (!this.children) {
-        this.$router.replace(this.parentAddress + this.title);
+        this.$router.replace(this.parentAddress + this.title).catch(() => {});
       }
     },
     getSelectedItemStyle: function () {
