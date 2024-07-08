@@ -1,10 +1,10 @@
 <script>
 import CloseBar from "./CloseBar.vue";
 import Menu from "./Menu.vue";
-import children from "./../items";
+import children from "../items";
 
 export default {
-  name: "LeftPanel",
+  name: "SidePanel",
   data() {
     return {
       items: children,
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <template>
-  <div class="left-panel" v-bind:style="setLeftPosition(isActive)">
+  <div class="side-panel" v-bind:style="setLeftPosition(isActive)">
     <CloseBar
       v-bind:closeBtnCallback="closeBtnCallback"
       v-bind:dark-mode="darkMode"
     ></CloseBar>
-    <div class="left-pane-menu-container">
+    <div class="side-panel-menu-container">
       <Menu
         v-bind:items="items"
         v-bind:isOpen="true"
@@ -52,7 +52,7 @@ export default {
 </template>
 
 <style>
-.left-panel {
+.side-panel {
   height: 100%;
   width: 300px;
   background-color: var(--bg-color);
@@ -61,7 +61,7 @@ export default {
   z-index: 100;
 }
 
-.left-pane-menu-container {
+.side-panel-menu-container {
   padding-right: 4px;
 }
 </style>

@@ -1,5 +1,5 @@
 <script>
-import Item from "./Item.vue";
+import MenuItem from "./MenuItem.vue";
 export default {
   name: "Menu",
   props: {
@@ -23,13 +23,13 @@ export default {
       };
     },
   },
-  components: { Item },
+  components: { MenuItem },
 };
 </script>
 
 <template>
   <div class="menu" v-bind:style="openMenu(isOpen)">
-    <Item
+    <MenuItem
       v-for="item in items"
       v-bind:key="item.id"
       v-bind:id="item.id"
@@ -38,7 +38,7 @@ export default {
       v-bind:selectedId="selectedId"
       v-bind:changeSelectedId="changeSelectedId"
       v-bind:parentAddress="menuAddress"
-    ></Item>
+    ></MenuItem>
   </div>
 </template>
 

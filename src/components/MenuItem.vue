@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "Item",
+  name: "MenuItem",
   props: {
     id: Number,
     title: String,

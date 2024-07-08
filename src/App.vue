@@ -1,6 +1,6 @@
 <script>
 import CoverPanel from "./components/CoverPanel.vue";
-import LeftPanel from "./components/LeftPanel.vue";
+import SidePanel from "./components/SidePanel.vue";
 import NavBar from "./components/NavBar.vue";
 import OpenLeftPanel from "./components/OpenLeftPanel.vue";
 import MainPanel from "./components/MainPanel.vue";
@@ -38,7 +38,7 @@ export default {
       }
     },
   },
-  components: { LeftPanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },
+  components: { SidePanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },
 };
 </script>
 
@@ -50,13 +50,13 @@ export default {
       v-bind:current-color-mode="isDarkMode"
     >
     </NavBar>
-    <LeftPanel
+    <SidePanel
       v-bind:isActive="showLeftPanel"
       v-bind:closeBtnCallback="setShowLeftPanel"
       v-bind:dark-mode="isDarkMode"
       v-bind:selectedId="selectedIdLeftPanel"
       v-bind:changeSelectedId="setSelectedIdLeftPanel"
-    ></LeftPanel>
+    ></SidePanel>
     <MainPanel></MainPanel>
     <CoverPanel
       v-bind:show-cover-panel="showLeftPanel"
