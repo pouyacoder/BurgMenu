@@ -3,7 +3,7 @@ export default {
   name: "CoverPanel",
   props: {
     showCoverPanel: Boolean,
-    closeLeftPanelCallback: Function,
+    closeSidePanelCallback: Function,
   },
   methods: {
     coverStyle: function (active) {
@@ -19,7 +19,7 @@ export default {
   <div
     class="cover-panel"
     v-bind:style="coverStyle(showCoverPanel)"
-    v-on:click="() => closeLeftPanelCallback(false)"
+    v-on:click="() => closeSidePanelCallback(false)"
   ></div>
 </template>
 

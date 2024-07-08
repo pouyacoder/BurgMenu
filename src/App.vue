@@ -56,7 +56,7 @@ export default {
     <MainPanel></MainPanel>
     <CoverPanel
       v-bind:show-cover-panel="showSidePanel"
-      v-bind:closeLeftPanelCallback="setShowSidePanel"
+      v-bind:closeSidePanelCallback="setShowSidePanel"
     ></CoverPanel>
   </div>
 </template>
