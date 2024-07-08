@@ -19,14 +19,7 @@ export default {
   },
   methods: {
     setLeftPosition: function (active) {
-      if (active) {
-        return {
-          left: "0px",
-        };
-      }
-      return {
-        left: "-400px",
-      };
+      return { left: active ? "0px" : "-400px" };
     },
   },
   components: { CloseBar, Menu },

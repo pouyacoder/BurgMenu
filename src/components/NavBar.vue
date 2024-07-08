@@ -10,8 +10,9 @@ export default {
   },
   methods: {
     getToggleBtnText: function (darkMode) {
-      let text = darkMode ? "Light" : "Dark";
-      return text;
+      // its a toggle for the opposite mode
+      if (darkMode) return "Light";
+      return "Dark";
     },
   },
   components: { OpenLeftPanel },

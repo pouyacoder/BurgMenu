@@ -17,19 +17,17 @@ export default {
   },
   methods: {
     onItemBtnClick: function () {
-      this.isOpen = this.isOpen ? false : true;
+      this.isOpen = !this.isOpen;
       this.changeSelectedId(this.children, this.id);
-      if (!this.children) {
+      if (!this.children)
         this.$router.replace(this.parentAddress + this.title).catch(() => {});
-      }
     },
     getSelectedItemStyle: function () {
-      if (!this.children && this.id == this.selectedId) {
+      if (!this.children && this.id == this.selectedId)
         return {
           color: "#764ABC",
           "text-decoration": "underline",
         };
-      }
       return {
         color: "var(--text-color)",
         "text-decoration": "none",
@@ -38,14 +36,7 @@ export default {
   },
   computed: {
     dropDownIconAngle: function () {
-      if (this.isOpen) {
-        return {
-          rotate: "180deg",
-        };
-      }
-      return {
-        rotate: "90deg",
-      };
+      return { rotate: this.isOpen ? "180deg" : "90deg" };
     },
   },
   components: {

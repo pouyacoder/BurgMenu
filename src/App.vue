@@ -23,19 +23,15 @@ export default {
       this.showLeftPanel = active;
     },
     toggleColorMode: function () {
-      this.isDarkMode = this.isDarkMode ? false : true;
-      if (this.isDarkMode) {
-        localStorage.setItem("theme", "dark");
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-        document.documentElement.setAttribute("data-theme", "light");
-      }
+      this.isDarkMode = !this.isDarkMode;
+      localStorage.setItem("theme", this.isDarkMode ? "dark" : "light");
+      document.documentElement.setAttribute(
+        "data-theme",
+        this.isDarkMode ? "dark" : "light"
+      );
     },
     setSelectedIdLeftPanel: function (hasSub, newId) {
-      if (!hasSub) {
-        this.selectedIdLeftPanel = newId;
-      }
+      if (!hasSub) this.selectedIdLeftPanel = newId;
     },
   },
   components: { SidePanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },

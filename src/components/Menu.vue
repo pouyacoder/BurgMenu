@@ -11,12 +11,11 @@ export default {
   },
   methods: {
     openMenu: function (open) {
-      if (open) {
+      if (open)
         return {
           "max-height": "500px",
           height: "auto",
         };
-      }
       return {
         height: "auto",
         "max-height": 0,

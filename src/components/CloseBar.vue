@@ -7,15 +7,10 @@ export default {
   },
   methods: {
     getColorMode: function (darkMode) {
-      if (darkMode) {
-        return {
-          background:
-            "linear-gradient(45deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#fff 45%,#fff 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%), linear-gradient(135deg,#242526 0%,#242526 43%,#fff 45%,#fff 55%,#242526 57%,#242526 100%)",
-        };
-      }
       return {
-        background:
-          "linear-gradient(45deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#000000 45%,#020202 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%),linear-gradient(135deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#000000 45%,#020202 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%)",
+        background: darkMode
+          ? "linear-gradient(45deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#fff 45%,#fff 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%), linear-gradient(135deg,#242526 0%,#242526 43%,#fff 45%,#fff 55%,#242526 57%,#242526 100%)"
+          : "linear-gradient(45deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#000000 45%,#020202 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%),linear-gradient(135deg,rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 43%,#000000 45%,#020202 55%,rgba(0, 0, 0, 0) 57%,rgba(0, 0, 0, 0) 100%)",
       };
     },
   },

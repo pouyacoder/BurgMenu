@@ -7,13 +7,10 @@ export default {
   },
   methods: {
     getColorMode: function (darkMode) {
-      if (darkMode) {
-        return {
-          background: "linear-gradient(#ffffff 30%, #0000 0) 0 0/100% 40%",
-        };
-      }
       return {
-        background: "linear-gradient(#000000 30%, #0000 0) 0 0/100% 40%",
+        background: darkMode
+          ? "linear-gradient(#ffffff 30%, #0000 0) 0 0/100% 40%"
+          : "linear-gradient(#000000 30%, #0000 0) 0 0/100% 40%",
       };
     },
   },

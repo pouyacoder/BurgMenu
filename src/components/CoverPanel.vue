@@ -7,12 +7,8 @@ export default {
   },
   methods: {
     coverStyle: function (active) {
-      if (active)
-        return {
-          animation: "fadeIn 0.5s forwards",
-        };
       return {
-        animation: "fadeOut 0.5s forwards",
+        animation: active ? "fadeIn 0.5s forwards" : "fadeOut 0.5s forwards",
       };
     },
   },
