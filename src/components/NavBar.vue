@@ -41,6 +41,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding-left: 25px;
+  z-index: 2;
 }
 
 .nav-bar button {
