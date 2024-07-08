@@ -8,9 +8,9 @@ export default {
   name: "App",
   data: function () {
     return {
-      showLeftPanel: false,
+      showSidePanel: false,
       isDarkMode: false,
-      selectedIdLeftPanel: -1,
+      selectedIdSidePanel: -1,
     };
   },
   computed: {
@@ -19,8 +19,8 @@ export default {
     },
   },
   methods: {
-    setShowLeftPanel: function (active) {
-      this.showLeftPanel = active;
+    setShowSidePanel: function (active) {
+      this.showSidePanel = active;
     },
     toggleColorMode: function () {
       this.isDarkMode = !this.isDarkMode;
@@ -30,8 +30,8 @@ export default {
         this.isDarkMode ? "dark" : "light"
       );
     },
-    setSelectedIdLeftPanel: function (hasSub, newId) {
-      if (!hasSub) this.selectedIdLeftPanel = newId;
+    setSelectedIdSidePanel: function (hasSub, newId) {
+      if (!hasSub) this.selectedIdSidePanel = newId;
     },
   },
   components: { SidePanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },
@@ -41,22 +41,22 @@ export default {
 <template>
   <div class="app" v-bind:style="getColorMode">
     <NavBar
-      v-bind:open-panel-callback="setShowLeftPanel"
+      v-bind:open-panel-callback="setShowSidePanel"
       v-bind:toggle-color-mode="toggleColorMode"
       v-bind:current-color-mode="isDarkMode"
     >
     </NavBar>
     <SidePanel
-      v-bind:isActive="showLeftPanel"
-      v-bind:closeBtnCallback="setShowLeftPanel"
+      v-bind:isActive="showSidePanel"
+      v-bind:closeBtnCallback="setShowSidePanel"
       v-bind:dark-mode="isDarkMode"
-      v-bind:selectedId="selectedIdLeftPanel"
-      v-bind:changeSelectedId="setSelectedIdLeftPanel"
+      v-bind:selectedId="selectedIdSidePanel"
+      v-bind:changeSelectedId="setSelectedIdSidePanel"
     ></SidePanel>
     <MainPanel></MainPanel>
     <CoverPanel
-      v-bind:show-cover-panel="showLeftPanel"
-      v-bind:closeLeftPanelCallback="setShowLeftPanel"
+      v-bind:show-cover-panel="showSidePanel"
+      v-bind:closeLeftPanelCallback="setShowSidePanel"
     ></CoverPanel>
   </div>
 </template>

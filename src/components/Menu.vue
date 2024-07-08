@@ -11,14 +11,9 @@ export default {
   },
   methods: {
     openMenu: function (open) {
-      if (open)
-        return {
-          "max-height": "500px",
-          height: "auto",
-        };
       return {
+        "max-height": open ? "500px" : 0,
         height: "auto",
-        "max-height": 0,
       };
     },
   },
