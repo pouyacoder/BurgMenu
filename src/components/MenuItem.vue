@@ -23,14 +23,13 @@ export default {
         this.$router.replace(this.parentAddress + this.title).catch(() => {});
     },
     getSelectedItemStyle: function () {
-      if (!this.children && this.id == this.selectedId)
-        return {
-          color: "#764ABC",
-          "text-decoration": "underline",
-        };
       return {
-        color: "var(--text-color)",
-        "text-decoration": "none",
+        color:
+          !this.children && this.id == this.selectedId
+            ? "#764ABC"
+            : "var(--text-color)",
+        "text-decoration":
+          !this.children && this.id == this.selectedId ? "underline" : "none",
       };
     },
   },
