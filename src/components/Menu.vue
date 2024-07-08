@@ -7,6 +7,7 @@ export default {
     isOpen: Boolean,
     selectedId: Number,
     changeSelectedId: Function,
+    menuAddress: String,
   },
   methods: {
     openMenu: function (open) {

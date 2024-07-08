@@ -8,6 +8,7 @@ export default {
     selectedId: Number,
     selectedId: Number,
     changeSelectedId: Function,
+    parentAddress: String,
   },
   data() {
     return {
@@ -52,10 +53,16 @@ export default {
 
 <template>
   <div class="item">
-    <button v-on:click="onItemBtnClick" v-bind:style="getSelectedItemStyle()">
-      {{ title }}
-      <div v-if="children" v-bind:style="dropDownIconAngle" class="icon"></div>
-    </button>
+    <router-link to="/Animals/Dog">
+      <button v-on:click="onItemBtnClick" v-bind:style="getSelectedItemStyle()">
+        {{ title }}
+        <div
+          v-if="children"
+          v-bind:style="dropDownIconAngle"
+          class="icon"
+        ></div>
+      </button>
+    </router-link>
     <Menu
       v-if="children"
       v-bind:items="children"

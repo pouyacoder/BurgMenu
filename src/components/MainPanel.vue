@@ -5,7 +5,9 @@ export default {
 </script>
 
 <template>
-  <div class="main-panel">This is main panel</div>
+  <div class="main-panel">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>

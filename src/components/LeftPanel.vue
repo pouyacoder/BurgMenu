@@ -2,6 +2,7 @@
 import CloseBar from "./CloseBar.vue";
 import Menu from "./Menu.vue";
 import children from "./../items";
+
 export default {
   name: "LeftPanel",
   data() {

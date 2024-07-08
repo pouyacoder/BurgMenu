@@ -3,7 +3,11 @@ const children = [
     id: 1,
     name: "Animals",
     children: [
-      { id: 4, name: "Dog", href: "#" },
+      {
+        id: 4,
+        name: "Dog",
+        href: "https://t3.ftcdn.net/jpg/05/59/27/48/360_F_559274893_O9iSRQwTKIkAooNTglilMgx2yMcXK9Or.jpg",
+      },
       { id: 5, name: "Cat", href: "#" },
       { id: 6, name: "Bird", href: "#" },
     ],
