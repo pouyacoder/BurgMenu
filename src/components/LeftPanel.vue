@@ -45,6 +45,7 @@ export default {
         v-bind:isOpen="true"
         v-bind:selectedId="selectedId"
         v-bind:changeSelectedId="changeSelectedId"
+        v-bind:menuAddress="'/'"
       ></Menu>
     </div>
   </div>

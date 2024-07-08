@@ -37,6 +37,7 @@ export default {
       v-bind:children="item.children"
       v-bind:selectedId="selectedId"
       v-bind:changeSelectedId="changeSelectedId"
+      v-bind:parentAddress="menuAddress"
     ></Item>
   </div>
 </template>

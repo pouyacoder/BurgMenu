@@ -19,6 +19,9 @@ export default {
     onItemBtnClick: function () {
       this.isOpen = this.isOpen ? false : true;
       this.changeSelectedId(this.children, this.id);
+      if (!this.children) {
+        this.$router.replace(this.parentAddress + this.title);
+      }
     },
     getSelectedItemStyle: function () {
       if (!this.children && this.id == this.selectedId) {
@@ -53,22 +56,17 @@ export default {
 
 <template>
   <div class="item">
-    <router-link to="/Animals/Dog">
-      <button v-on:click="onItemBtnClick" v-bind:style="getSelectedItemStyle()">
-        {{ title }}
-        <div
-          v-if="children"
-          v-bind:style="dropDownIconAngle"
-          class="icon"
-        ></div>
-      </button>
-    </router-link>
+    <button v-on:click="onItemBtnClick" v-bind:style="getSelectedItemStyle()">
+      {{ title }}
+      <div v-if="children" v-bind:style="dropDownIconAngle" class="icon"></div>
+    </button>
     <Menu
       v-if="children"
       v-bind:items="children"
       v-bind:isOpen="isOpen"
       v-bind:selectedId="selectedId"
       v-bind:changeSelectedId="changeSelectedId"
+      v-bind:menuAddress="parentAddress + title + '/'"
     ></Menu>
   </div>
 </template>
