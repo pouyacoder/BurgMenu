@@ -19,7 +19,7 @@ export default {
       this.isOpen = !this.isOpen;
       this.changeSelectedId(this.children, this.id);
       if (!this.children)
-        this.$router.replace(this.parentAddress + this.title).catch(() => {});
+        this.$router.replace(this.parentAddress + this.title).catch(() => { });
     },
     getSelectedItemStyle: function () {
       if (this.children && this.isOpen)
@@ -53,14 +53,8 @@ export default {
       {{ title }}
       <div v-if="children" v-bind:style="dropDownIconAngle" class="icon"></div>
     </button>
-    <Menu
-      v-if="children"
-      v-bind:items="children"
-      v-bind:isOpen="isOpen"
-      v-bind:selectedId="selectedId"
-      v-bind:changeSelectedId="changeSelectedId"
-      v-bind:menuAddress="parentAddress + title + '/'"
-    ></Menu>
+    <Menu v-if="children" v-bind:items="children" v-bind:isOpen="isOpen" v-bind:selectedId="selectedId"
+      v-bind:changeSelectedId="changeSelectedId" v-bind:menuAddress="parentAddress + title + '/'"></Menu>
   </div>
 </template>
 
@@ -68,6 +62,7 @@ export default {
 .item {
   padding: 0 0px 3px 4px;
 }
+
 .item button {
   width: 100%;
   border: 0;
@@ -87,6 +82,7 @@ export default {
 
 .item button:hover {
   background-color: var(--hover-bg-color);
+  cursor: pointer;
 }
 
 .icon {

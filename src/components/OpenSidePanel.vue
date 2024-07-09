@@ -36,4 +36,8 @@ export default {
   height: 20px;
   aspect-ratio: 1;
 }
+
+.open-side-panel .open-panel-btn:hover {
+  cursor: pointer;
+}
 </style>

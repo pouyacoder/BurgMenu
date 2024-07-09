@@ -19,11 +19,7 @@ export default {
 
 <template>
   <div class="close-bar">
-    <div
-      class="close-btn"
-      v-bind:style="getColorMode(darkMode)"
-      v-on:click="() => closeBtnCallback(false)"
-    ></div>
+    <div class="close-btn" v-bind:style="getColorMode(darkMode)" v-on:click="() => closeBtnCallback(false)"></div>
   </div>
 </template>
 
@@ -43,5 +39,9 @@ export default {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+
+.close-bar .close-btn:hover {
+  cursor: pointer;
 }
 </style>

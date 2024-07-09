@@ -52,4 +52,8 @@ export default {
   background-color: var(--bg-color-mode-btn);
   color: var(--text-color-mode-btn);
 }
+
+.nav-bar button:hover {
+  cursor: pointer;
+}
 </style>
