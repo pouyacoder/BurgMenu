@@ -1,5 +1,5 @@
 <script>
-import OpenLeftPanel from "./OpenLeftPanel.vue";
+import OpenSidePanel from "./OpenSidePanel.vue";
 
 export default {
   name: "NavBar",
@@ -15,16 +15,13 @@ export default {
       return "Dark";
     },
   },
-  components: { OpenLeftPanel },
+  components: { OpenSidePanel },
 };
 </script>
 
 <template>
   <div class="nav-bar">
-    <OpenLeftPanel
-      v-bind:open-panel-callback="openPanelCallback"
-      v-bind:color-mode="currentColorMode"
-    ></OpenLeftPanel>
+    <OpenSidePanel v-bind:open-panel-callback="openPanelCallback" v-bind:color-mode="currentColorMode"></OpenSidePanel>
     <button v-on:click="toggleColorMode">
       {{ getToggleBtnText(currentColorMode) }}
     </button>

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "OpenLeftPanel",
+  name: "OpenSidePanel",
   props: {
     openPanelCallback: Function,
     colorMode: Boolean,
@@ -18,23 +18,21 @@ export default {
 </script>
 
 <template>
-  <div class="open-left-panel">
-    <div
-      class="open-panel-btn"
-      v-bind:style="getColorMode(colorMode)"
-      v-on:click="() => openPanelCallback(true)"
-    ></div>
+  <div class="open-side-panel">
+    <div class="open-panel-btn" v-bind:style="getColorMode(colorMode)" v-on:click="() => openPanelCallback(true)"></div>
   </div>
 </template>
 
 <style>
-.open-left-panel {
-  width: 20px; /* control the size */
+.open-side-panel {
+  width: 20px;
+  /* control the size */
   height: 20px;
 }
 
-.open-left-panel .open-panel-btn {
-  width: 20px; /* control the size */
+.open-side-panel .open-panel-btn {
+  width: 20px;
+  /* control the size */
   height: 20px;
   aspect-ratio: 1;
 }
