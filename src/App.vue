@@ -2,7 +2,6 @@
 import CoverPanel from "./components/CoverPanel.vue";
 import SidePanel from "./components/SidePanel.vue";
 import NavBar from "./components/NavBar.vue";
-import OpenLeftPanel from "./components/OpenLeftPanel.vue";
 import MainPanel from "./components/MainPanel.vue";
 export default {
   name: "App",
@@ -34,30 +33,19 @@ export default {
       if (!hasSub) this.selectedIdSidePanel = newId;
     },
   },
-  components: { SidePanel, OpenLeftPanel, CoverPanel, NavBar, MainPanel },
+  components: { SidePanel, CoverPanel, NavBar, MainPanel },
 };
 </script>
 
 <template>
   <div class="app" v-bind:style="getColorMode">
-    <NavBar
-      v-bind:open-panel-callback="setShowSidePanel"
-      v-bind:toggle-color-mode="toggleColorMode"
-      v-bind:current-color-mode="isDarkMode"
-    >
+    <NavBar v-bind:open-panel-callback="setShowSidePanel" v-bind:toggle-color-mode="toggleColorMode"
+      v-bind:current-color-mode="isDarkMode">
     </NavBar>
-    <SidePanel
-      v-bind:isActive="showSidePanel"
-      v-bind:closeBtnCallback="setShowSidePanel"
-      v-bind:dark-mode="isDarkMode"
-      v-bind:selectedId="selectedIdSidePanel"
-      v-bind:changeSelectedId="setSelectedIdSidePanel"
-    ></SidePanel>
+    <SidePanel v-bind:isActive="showSidePanel" v-bind:closeBtnCallback="setShowSidePanel" v-bind:dark-mode="isDarkMode"
+      v-bind:selectedId="selectedIdSidePanel" v-bind:changeSelectedId="setSelectedIdSidePanel"></SidePanel>
     <MainPanel></MainPanel>
-    <CoverPanel
-      v-bind:show-cover-panel="showSidePanel"
-      v-bind:closeSidePanelCallback="setShowSidePanel"
-    ></CoverPanel>
+    <CoverPanel v-bind:show-cover-panel="showSidePanel" v-bind:closeSidePanelCallback="setShowSidePanel"></CoverPanel>
   </div>
 </template>
 
