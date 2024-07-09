@@ -26,13 +26,14 @@ export default {
         return {
           "background-color": "var(--hover-bg-color)",
         };
+      let isSelected = !this.children && (this.id == this.selectedId || this.$route.path == this.parentAddress + this.title)
       return {
         color:
-          !this.children && this.id == this.selectedId
+          isSelected
             ? "#764ABC"
             : "var(--text-color)",
         "text-decoration":
-          !this.children && this.id == this.selectedId ? "underline" : "none",
+          isSelected ? "underline" : "none",
       };
     },
   },
